@@ -1,10 +1,10 @@
-# Groceries
+# Artpost
 
 A simple grocery list app using React Native, Redux, Firebase, and Async Storage for offline data. It works on both iOS and Android.
 
-[![Code Climate](https://codeclimate.com/github/bruz/react-native-redux-groceries/badges/gpa.svg)](https://codeclimate.com/github/bruz/react-native-redux-groceries)
-[![Dependency Status](https://david-dm.org/bruz/react-native-redux-groceries.svg)](https://david-dm.org/bruz/react-native-redux-groceries)
-[![MIT License](https://img.shields.io/github/license/bruz/react-native-redux-groceries.svg)](https://github.com/bruz/react-native-redux-groceries/blob/master/LICENSE)
+[![Code Climate](https://codeclimate.com/github/bruz/react-native-redux-artpost/badges/gpa.svg)](https://codeclimate.com/github/bruz/react-native-redux-artpost)
+[![Dependency Status](https://david-dm.org/bruz/react-native-redux-artpost.svg)](https://david-dm.org/bruz/react-native-redux-artpost)
+[![MIT License](https://img.shields.io/github/license/bruz/react-native-redux-artpost.svg)](https://github.com/bruz/react-native-redux-artpost/blob/master/LICENSE)
 
 ![demo](demo.gif)
 
@@ -22,8 +22,8 @@ A [Firebase](https://www.firebase.com) account is also needed.
 Run:
 
 ```bash
-git clone https://github.com/bruz/react-native-redux-groceries.git groceries
-cd groceries
+git clone https://github.com/bruz/react-native-redux-artpost.git artpost
+cd artpost
 npm install
 ```
 
@@ -38,7 +38,7 @@ Edit config.js to have the URL of your Firebase app.
 ## Develop on iOS
 
 ```bash
-open ios/Groceries.xcodeproj
+open ios/Artpost.xcodeproj
 ```
 
 This will launch Xcode. Just choose a device a press run.

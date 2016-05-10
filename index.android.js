@@ -5,7 +5,7 @@ import configureStore from './src/store/configureStore'
 
 const store = configureStore()
 
-class Groceries extends Component {
+class Artpost extends Component {
   render() {
     return (
       <Provider store={store}>
@@ -15,4 +15,4 @@ class Groceries extends Component {
   }
 }
 
-AppRegistry.registerComponent('Groceries', () => Groceries)
+AppRegistry.registerComponent('Artpost', () => Artpost)

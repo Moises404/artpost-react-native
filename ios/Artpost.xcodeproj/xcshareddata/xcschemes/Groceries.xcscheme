@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "Groceries.app"
-               BlueprintName = "Groceries"
-               ReferencedContainer = "container:Groceries.xcodeproj">
+               BuildableName = "Artpost.app"
+               BlueprintName = "Artpost"
+               ReferencedContainer = "container:Artpost.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "GroceriesTests.xctest"
-               BlueprintName = "GroceriesTests"
-               ReferencedContainer = "container:Groceries.xcodeproj">
+               BuildableName = "ArtpostTests.xctest"
+               BlueprintName = "ArtpostTests"
+               ReferencedContainer = "container:Artpost.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "GroceriesTests.xctest"
-               BlueprintName = "GroceriesTests"
-               ReferencedContainer = "container:Groceries.xcodeproj">
+               BuildableName = "ArtpostTests.xctest"
+               BlueprintName = "ArtpostTests"
+               ReferencedContainer = "container:Artpost.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "Groceries.app"
-            BlueprintName = "Groceries"
-            ReferencedContainer = "container:Groceries.xcodeproj">
+            BuildableName = "Artpost.app"
+            BlueprintName = "Artpost"
+            ReferencedContainer = "container:Artpost.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "Groceries.app"
-            BlueprintName = "Groceries"
-            ReferencedContainer = "container:Groceries.xcodeproj">
+            BuildableName = "Artpost.app"
+            BlueprintName = "Artpost"
+            ReferencedContainer = "container:Artpost.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -99,9 +99,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "Groceries.app"
-            BlueprintName = "Groceries"
-            ReferencedContainer = "container:Groceries.xcodeproj">
+            BuildableName = "Artpost.app"
+            BlueprintName = "Artpost"
+            ReferencedContainer = "container:Artpost.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -14,7 +14,7 @@ import Item from './Item'
 const itemsRef = new Firebase(`${ config.FIREBASE_ROOT }/items`)
 const connectedRef = new Firebase(`${ config.FIREBASE_ROOT }/.info/connected`)
 
-export default class Groceries extends Component {
+export default class Artpost extends Component {
   constructor(props) {
     super(props)
 
