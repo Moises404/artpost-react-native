@@ -5,8 +5,7 @@ import React, {
   StyleSheet,
   Text,
   TextInput,
-  View,
-  TouchableHighlight
+  View
 } from 'react-native'
 import Firebase from 'firebase'
 import config from '../../config'
@@ -19,14 +18,9 @@ export default class Artpost extends Component {
   constructor(props) {
     super(props)
 
-    // this.state = {
-    //   newItem: ''
-    // }
-
-    var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
-      dataSource: ds.cloneWithRows(this._genRows({}))
-    };
+      newItem: ''
+    }
   }
 
   componentWillMount() {
@@ -63,38 +57,18 @@ export default class Artpost extends Component {
     })
   }
 
-  _genRows() {
-    var dataBlob = [];
-    for (var ii = 0; ii < 100; ii++) {
-      dataBlob.push('Cell ' + ii);
-    }
-    return dataBlob;
-  }
-
   // componentWillReceiveProps(nextProps) {
   //   console.log('NEXT PROPS')
   //   console.log(nextProps)
 
   // }
 
-  renderRow(rowData: string, sectionID: number, rowID: number) {
+  renderRow(rowData) {
     console.log(this.props.connected)
-    // return (
-    //   <Item name={rowData.title}
-    //         removable={this.props.connected}
-    //         onRemove={() => this._remove(rowData.id)} />
-    // )
-
     return (
-      <TouchableHighlight underlayColor="transparent">
-        <View>
-          <View style={styles.row}>
-            <Text style={styles.text}>
-              {rowData.title}
-            </Text>
-          </View>
-        </View>
-      </TouchableHighlight>
+      <Item name={rowData.title}
+            removable={this.props.connected}
+            onRemove={() => this._remove(rowData.id)} />
     )
   }
 
@@ -142,16 +116,11 @@ export default class Artpost extends Component {
                    onChangeText={(newItem) => this.setState({newItem})}
                    onSubmitEditing={() => this._add()} />
 
-
-         <ListView
-           contentContainerStyle={styles.list}
-           dataSource={this.dataSource.cloneWithRows(items)}
-           initialListSize={21}
-           pageSize={3}
-           scrollRenderAheadDistance={500}
-           enableEmptySections={true}
-           renderRow={this.renderRow.bind(this)}
-         />
+        <ListView
+          dataSource={this.dataSource.cloneWithRows(items)}
+          enableEmptySections={true}
+          renderRow={this.renderRow.bind(this)}
+        />
       </View>
     )
   }
@@ -182,32 +151,5 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     paddingTop: 5,
     paddingBottom: 5
-  },
-  list: {
-    justifyContent: 'center',
-    flexDirection: 'row',
-    flexWrap: 'wrap'
-  },
-  row: {
-    flex: 1,
-    justifyContent: 'center',
-    padding: 5,
-    margin: 3,
-    width: 100,
-    height: 100,
-    backgroundColor: '#F6F6F6',
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderWidth: 1,
-    borderRadius: 5,
-    borderColor: '#CCC'
-  },
-  thumb: {
-    width: 64,
-    height: 64
-  },
-  text: {
-    fontWeight: 'bold',
-    fontSize: 10
   }
 })

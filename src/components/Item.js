@@ -105,12 +105,11 @@ const styles = StyleSheet.create({
   row: {
     justifyContent: 'center',
     padding: 10,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: 'lime',
     flex: 1
   },
   separator: {
-    height: 1,
-    backgroundColor: '#CCCCCC'
+    marginBottom: 1
   },
   text: {
     flex: 1,

@@ -15,18 +15,28 @@ import Item from './Item'
 const itemsRef = new Firebase(`${ config.FIREBASE_ROOT }/items`)
 const connectedRef = new Firebase(`${ config.FIREBASE_ROOT }/.info/connected`)
 
-export default class Artpost extends Component {
+// var THUMB_URLS = [
+//   require('./Thumbnails/like.png'),
+//   require('./Thumbnails/dislike.png'),
+//   require('./Thumbnails/call.png'),
+//   require('./Thumbnails/fist.png'),
+//   require('./Thumbnails/bandaged.png'),
+//   require('./Thumbnails/flowers.png'),
+//   require('./Thumbnails/heart.png'),
+//   require('./Thumbnails/liking.png'),
+//   require('./Thumbnails/party.png'),
+//   require('./Thumbnails/poke.png'),
+//   require('./Thumbnails/superlike.png'),
+//   require('./Thumbnails/victory.png'),
+// ];
+
+export default class ArtpostGrid extends Component {
   constructor(props) {
     super(props)
 
-    // this.state = {
-    //   newItem: ''
-    // }
-
-    var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
-      dataSource: ds.cloneWithRows(this._genRows({}))
-    };
+      newItem: ''
+    }
   }
 
   componentWillMount() {
@@ -63,14 +73,6 @@ export default class Artpost extends Component {
     })
   }
 
-  _genRows() {
-    var dataBlob = [];
-    for (var ii = 0; ii < 100; ii++) {
-      dataBlob.push('Cell ' + ii);
-    }
-    return dataBlob;
-  }
-
   // componentWillReceiveProps(nextProps) {
   //   console.log('NEXT PROPS')
   //   console.log(nextProps)
@@ -79,18 +81,18 @@ export default class Artpost extends Component {
 
   renderRow(rowData: string, sectionID: number, rowID: number) {
     console.log(this.props.connected)
+    var rowHash = Math.abs(hashCode(rowData));
     // return (
     //   <Item name={rowData.title}
     //         removable={this.props.connected}
     //         onRemove={() => this._remove(rowData.id)} />
     // )
-
     return (
       <TouchableHighlight underlayColor="transparent">
         <View>
           <View style={styles.row}>
             <Text style={styles.text}>
-              {rowData.title}
+              {rowData}
             </Text>
           </View>
         </View>
@@ -143,15 +145,15 @@ export default class Artpost extends Component {
                    onSubmitEditing={() => this._add()} />
 
 
-         <ListView
-           contentContainerStyle={styles.list}
-           dataSource={this.dataSource.cloneWithRows(items)}
-           initialListSize={21}
-           pageSize={3}
-           scrollRenderAheadDistance={500}
-           enableEmptySections={true}
-           renderRow={this.renderRow.bind(this)}
-         />
+        <ListView
+          contentContainerStyle={styles.list}
+          dataSource={this.dataSource.cloneWithRows(items)}
+          initialListSize={21}
+          pageSize={3}
+          scrollRenderAheadDistance={500}
+          enableEmptySections={true}
+          renderRow={this.renderRow.bind(this)}
+        />
       </View>
     )
   }
@@ -189,7 +191,6 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap'
   },
   row: {
-    flex: 1,
     justifyContent: 'center',
     padding: 5,
     margin: 3,
@@ -197,7 +198,6 @@ const styles = StyleSheet.create({
     height: 100,
     backgroundColor: '#F6F6F6',
     alignItems: 'center',
-    justifyContent: 'center',
     borderWidth: 1,
     borderRadius: 5,
     borderColor: '#CCC'
@@ -207,7 +207,8 @@ const styles = StyleSheet.create({
     height: 64
   },
   text: {
-    fontWeight: 'bold',
-    fontSize: 10
+    flex: 1,
+    marginTop: 5,
+    fontWeight: 'bold'
   }
 })
